@@ -9,8 +9,8 @@ defmodule Watercooler.ChatRoom do
     {:error, socket, :unauthorized}
   end
 
-  def event(socket, "chat_room:join", payload = %{"nickname" => _nickname}) do
-    broadcast socket, "chat_room:joined", payload
+  def event(socket, "chat_room:join", payload = %{"nickname" => nickname}) do
+    broadcast socket, "chat_room:joined", %{nickname: nickname, users: [%{nickname: "ChatBot"}, %{nickname: nickname}]}
     socket
   end
 
@@ -19,8 +19,8 @@ defmodule Watercooler.ChatRoom do
     socket
   end
 
-  def event(socket, "chat_room:leave", payload = %{"nickname" => _nickname}) do
-    broadcast socket, "chat_room:left", payload
+  def event(socket, "chat_room:leave", payload = %{"nickname" => nickname}) do
+    broadcast socket, "chat_room:left", %{nickname: nickname, users: [%{nickname: "ChatBot"}]}
     socket
   end
 

@@ -2,3 +2,13 @@
 .footer {
   text-align: center;
 }
+
+.messages {
+  max-height: 400px;
+  overflow: scroll;
+}
+
+.system-message {
+  color: #999;
+}
+
