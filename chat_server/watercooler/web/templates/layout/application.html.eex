@@ -6,24 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-
-    <title>Hello Phoenix!</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="/js/phoenix.js"></script>
+    <script src="/js/chat_room.js"></script>
+    <title>Elixir Watercooler</title>
     <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/watercooler.css">
   </head>
 
   <body>
+
     <div class="container">
+
       <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li><a href="https://github.com/phoenixframework/phoenix">Get Started</a></li>
-        </ul>
-        <span class="logo"></span>
+        <div class="row">
+          <div class="col-md-3">
+            <img src="/images/watercooler.png">
+          </div>
+          <div class="col-md-9">
+            <h1>
+              <small>Welcome to the</small><br>
+              Elixir Watercooler
+            </h1>
+          </div>
+        </div>
       </div>
 
       <%= @inner %>
 
       <div class="footer">
-        <p><a href="http://phoenixframework.org">phoenixframework.org</a></p>
+        <p>
+          Built with <a href="http://phoenixframework.org">Phoenix</a> and
+          <a href="http://elixir-lang.org">Elixir</a>
+        </p>
       </div>
 
     </div> <!-- /container -->
