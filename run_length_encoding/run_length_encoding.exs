@@ -11,8 +11,8 @@ defmodule RunLengthEncoding do
   defp compress([c | tail], compressed),            do: compress(tail, [{c, 1} | compressed])
 
   defp format([], formatted), do: Enum.join(formatted)
-  defp format([{c, n} | compressed], formatted), do: format(compressed, ["#{n}#{c}"|formatted])
-  defp format([c | compressed], formatted),      do: format(compressed, [c|formatted])
+  defp format([{c, n} | compressed], formatted), do: format(compressed, ["#{n}#{c}" | formatted])
+  defp format([c | compressed], formatted),      do: format(compressed, [c | formatted])
 
 end
 
