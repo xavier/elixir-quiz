@@ -1,5 +1,6 @@
 
 .footer {
+  margin-top: 20px;
   text-align: center;
 }
 
@@ -12,3 +13,10 @@
   color: #999;
 }
 
+.control-panel .join-room {
+  margin-left: 10px !important;
+}
+
+.control-panel .nickname {
+  margin-right: 10px !important;
+}

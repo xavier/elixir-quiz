@@ -71,25 +71,26 @@
     },
 
     renderJoinRoomForm: function () {
-      return R.div({className: "row"},
+      return R.div({className: "row row control-panel"},
           R.div({className: "col-md-3"}),
           R.div({className: "col-md-9"},
-            R.form({onSubmit: this.joinRoom},
-              R.input({onChange: this.textUpdated, value: this.state.text, placeholder: "nickname"}),
-              R.button(null, "Join room")
+            R.form({className: "form-inline", onSubmit: this.joinRoom},
+              R.input({className: "form-control", onChange: this.textUpdated, value: this.state.text, placeholder: "nickname"}),
+              R.button({className: "btn btn-success join-room"}, "Join room")
             )
           )
         );
     },
 
     renderSendMessageForm: function () {
-      return R.div({className: "row"},
+      return R.div({className: "row control-panel"},
           R.div({className: "col-md-3"},
-            R.button({onClick: this.leaveRoom}, "Leave room")
+            R.button({className: "btn btn-danger", onClick: this.leaveRoom}, "Leave room")
           ),
           R.div({className: "col-md-6"},
-            R.form({onSubmit: this.sendMessage},
-              R.input({onChange: this.textUpdated, value: this.state.text})
+            R.form({className: "form-inline", onSubmit: this.sendMessage},
+              R.label({className: "control-label nickname"}, this.props.user.nickname + ": "),
+              R.input({className: "form-control", onChange: this.textUpdated, value: this.state.text})
             )
           )
         );
@@ -167,8 +168,8 @@
       render: function() {
         return R.div(null,
           R.div({className: "row"},
-            R.div({className: "col-md-3"}, Watercooler.Roster({users: this.state.users})),
-            R.div({className: "col-md-9"}, Watercooler.MessageList({messages: this.state.messages}))
+            R.div({className: "col-md-3 roster"}, Watercooler.Roster({users: this.state.users})),
+            R.div({className: "col-md-9 message-list"}, Watercooler.MessageList({messages: this.state.messages}))
           ),
           Watercooler.CommandPanel({user: this.state.user, onJoin: this.joinRoom, onLeave: this.leaveRoom, onMessage: this.sendMessage})
           //, R.pre(null, JSON.stringify(this.state))
