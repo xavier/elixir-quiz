@@ -1,2 +1,2 @@
-Phoenix.CodeReloader.reload!
+#Phoenix.CodeReloader.reload! # WTF?
 ExUnit.start

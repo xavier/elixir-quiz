@@ -8,9 +8,7 @@ defmodule Watercooler do
 
     children = [
       # Define workers and child supervisors to be supervised
-      # worker(TestApp.Worker, [arg1, arg2, arg3])
-
-      worker(Watercooler.SampleServer, [ 42 ])
+      worker(Watercooler.Domain.ChatServer, []),
     ]
 
     # Strategies:
