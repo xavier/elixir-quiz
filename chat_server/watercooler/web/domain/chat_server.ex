@@ -1,6 +1,12 @@
 defmodule Watercooler.Domain.ChatServer do
   use GenServer
 
+  @moduledoc """
+
+  A registry of chat rooms
+
+  """
+
   @server_name :chat_server
 
   ## Client API
@@ -9,14 +15,13 @@ defmodule Watercooler.Domain.ChatServer do
   Starts the registry.
   """
   def start_link(opts \\ []) do
-    IO.puts "ChatServer start_link"
     GenServer.start_link(__MODULE__, :ok, name: @server_name)
   end
 
   @doc """
   Looks up the chat room pid for `name` stored in `server`.
 
-  Returns `{:ok, pid}` if the room exists, `:error` otherwise.
+  Returns `{:ok, room}` if the room exists, `:error` otherwise.
   """
   def room(name) do
     GenServer.call(@server_name, {:room, name})

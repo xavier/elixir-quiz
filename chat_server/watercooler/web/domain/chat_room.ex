@@ -1,6 +1,12 @@
 
 defmodule Watercooler.Domain.ChatRoom do
 
+  @moduledoc """
+
+  Provides an API to manage the state of a chat room
+
+  """
+
   defmodule State do
     defstruct name: nil, users: [], messages: []
   end
